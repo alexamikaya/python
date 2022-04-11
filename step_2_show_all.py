@@ -1,9 +1,9 @@
 from tkinter import *
-
+import tkinter.ttk as ttk
+import csv
 def update_show_all():
     
-    import tkinter.ttk as ttk
-    import csv
+    
     root = Tk()
     root.title("Calculation")
     width = 500
