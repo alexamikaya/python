@@ -1,8 +1,9 @@
 from tkinter import *
+import tkinter.ttk as ttk
+import csv
+import pandas as df 
 def sort():
-    import tkinter.ttk as ttk
-    import csv
-    import pandas as df 
+    
     root = Tk()
     root.title("Calculation")
     width = 500
