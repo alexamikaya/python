@@ -1,21 +1,18 @@
 
 from tkinter import *
-def find_category():
-    import pandas as df 
+import pandas as pd 
     
-    import tkinter as tk
-    from tkinter import ttk
-    import csv
+import tkinter as tk
+
+import csv
+def find_category():
+    
     window=tk.Tk()
     window.title('Calculation')
     frame_add_form = tk.Frame(window)
     frame_add_form.grid(column=0,row=0,sticky='ns')
     def show():
-        import pandas as pd
         
-        import tkinter as tk
-        from tkinter import ttk
-        import csv
         window=tk.Tk()
         window.title('Calculation')
         width = 500
@@ -46,15 +43,13 @@ def find_category():
         tree.column('#4', stretch=NO, minwidth=0, width=100)
         tree.pack()
         with open('shop1.csv') as f:
-           import pandas as pd
+           
            read=pd.read_csv(f, delimiter=',', names=["category", "product", "cost", "date"]) 
-           read.loc[read['category']== f_category]
-           for row in fin:
-                category = row['category']
-                product = row['product']
-                cost = row['cost']
-                date = row['date']
-                tree.insert("", 0, values=(category, product, cost, date))
+           
+           for row in read[read['category']== str(f_category.get())].itertuples():
+               
+               
+               tree.insert("", 0, values=(row.category, row.product, row.cost, row.date))
 
     l_category = ttk.Label(frame_add_form, text = "What's the category?")
     f_category = ttk.Entry(frame_add_form, text = "Write category?")

@@ -1,10 +1,10 @@
-
+import tkinter as tk
+from tkinter import ttk
+import tkinter.messagebox as mb
+import csv
     
 def add_new():
-    import tkinter as tk
-    from tkinter import ttk
-    import tkinter.messagebox as mb
-    import csv
+    
     filename = "shop1.csv"
     window=tk.Tk()
     window.title('Calculation')
@@ -13,16 +13,17 @@ def add_new():
     
     def submit():
         
-       import csv 
-       from csv import writer
+       
        
        with open("shop1.csv", mode="a", encoding='utf-8', newline='') as file:
-           w = writer(file)
+           w = csv.writer(file)
+           print(f_category.get(), f_product.get())
+           
            w.writerow([f_category.get(), f_product.get(), f_cost.get(), f_date.get()])
-           file.close()
+           
            msg = "Поздравляем! Ваши траты записаны"
            mb.showinfo("Успех", msg)               
-   
+
         
     l_category = ttk.Label(frame_add_form, text = "What's the category?")
     f_category = ttk.Entry(frame_add_form, text = "Add category?")

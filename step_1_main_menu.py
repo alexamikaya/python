@@ -32,9 +32,9 @@ def delete():
     
 window = Tk()
 window.title("Calculation")
-window.geometry("300x250")
-hello = "Здесь можно сохранить данные о покупках"
-lbl = Label(window, text=hello, font=("Arial Bold", 20))  
+window.geometry("350x250")
+hello = "Здесь можно сохранить данные о покупках "
+lbl = Label(window, text=hello, font=("Arial Bold", 10))  
 lbl.grid(column=0, row=0)  
 mainmenu = Menu(window)
 window.config(menu=mainmenu)
