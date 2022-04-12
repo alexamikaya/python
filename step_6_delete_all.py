@@ -14,7 +14,9 @@ def delete():
     shoplist = open(filename, "w")
     shoplist.truncate()
     shoplist.close()
-    
+    with open("shop1.csv", mode="a", encoding='utf-8', newline='') as file:
+        w = csv.writer(file)
+        w.writerow(['category', 'product', 'cost', 'date'])
    
     msg = "Поздравляем! Вы очистили ваши траты"
     mb.showinfo("Успех", msg)
