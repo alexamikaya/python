@@ -17,7 +17,6 @@ def add_new():
        
        with open("shop1.csv", mode="a", encoding='utf-8', newline='') as file:
            w = csv.writer(file)
-           print(f_category.get(), f_product.get())
            
            w.writerow([f_category.get(), f_product.get(), f_cost.get(), f_date.get()])
            
